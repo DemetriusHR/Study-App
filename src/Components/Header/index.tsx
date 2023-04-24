@@ -1,22 +1,33 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
-import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
+import Search from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import Notifications from '@mui/icons-material/Notifications';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => (
-  <Paper elevation={2}>
-    <Stack spacing={4} p={2}>
-      <Skeleton variant="rounded" height={60} />
-      <Stack spacing={2}>
-        <Typography>Início</Typography>
-        <Typography>Calendário de aulas</Typography>
-        <Typography>Notas e frequência</Typography>
-        <Typography>Atividades das aulas</Typography>
-        <Typography>Arquivos das aulas</Typography>
-      </Stack>
-    </Stack>
-  </Paper>
+  <Stack spacing={4} direction="row" alignItems="center">
+    <TextField
+      id="input-search"
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <Search />
+          </InputAdornment>
+        ),
+      }}
+      variant="outlined"
+      fullWidth
+    />
+    <IconButton color="primary">
+      <Notifications />
+    </IconButton>
+    <IconButton color="primary">
+      <AccountCircleIcon />
+    </IconButton>
+  </Stack>
 );
 
 export default Header;

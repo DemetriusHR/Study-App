@@ -6,6 +6,15 @@ const theme = createTheme({
       default: '#F0F0F0',
     },
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          background: '#fff',
+        },
+      },
+    },
+  },
 });
 
 export default theme;
