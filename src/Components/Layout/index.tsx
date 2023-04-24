@@ -1,7 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom/';
 
 import Header from '../Header';
 import Navigation from '../Navigation';
@@ -12,10 +11,8 @@ const Layout = () => (
       <Navigation />
     </Grid>
     <Grid item xs={9}>
-      <Stack spacing={4}>
-        <Header />
-        <Outlet />
-      </Stack>
+      <Header />
+      <Outlet />
     </Grid>
   </Grid>
 );
