@@ -4,6 +4,8 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import CardFrequenciaMedia from './Components/CardFrequenciaMedia';
+
 const Home = () => (
   <Grid container spacing={2} paddingTop={4}>
     <Grid item xs={12}>
@@ -11,7 +13,7 @@ const Home = () => (
     </Grid>
     <Grid item xs={6}>
       <Stack spacing={2}>
-        <Paper>teste</Paper>
+        <CardFrequenciaMedia />
         <Paper>teste</Paper>
       </Stack>
     </Grid>
