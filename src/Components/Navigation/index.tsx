@@ -1,5 +1,5 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
+import PaperMui from '@mui/material/Paper';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import Home from '@mui/icons-material/Home';
@@ -12,8 +12,13 @@ import CollectionsBookmark from '@mui/icons-material/CollectionsBookmark';
 import CollectionsBookmarkOutlined from '@mui/icons-material/CollectionsBookmarkOutlined';
 import Collections from '@mui/icons-material/Collections';
 import CollectionsOutlined from '@mui/icons-material/CollectionsOutlined';
+import { styled } from '@mui/material/styles';
 
 import ButtonNav from './ButtonNav';
+
+const Paper = styled(PaperMui)`
+  height: 100%;
+`;
 
 const Navigation = () => (
   <Paper elevation={2}>
