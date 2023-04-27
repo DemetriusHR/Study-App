@@ -8,7 +8,7 @@ import ArrowRight from '@mui/icons-material/ArrowRight';
 import ArrowLeft from '@mui/icons-material/ArrowLeft';
 import { styled } from '@mui/material/styles';
 
-import InformacaoComData from '../InformacaoComData';
+import InformacaoAulaComData from './InformacaoComData';
 
 const Card = styled(CardMui)`
   height: 100%;
@@ -86,25 +86,17 @@ const CardCalendarioAulas = () => {
               Próximo mês
             </Button>
           </Stack>
-          {/* <Stack spacing={1}>
-          <Typography variant="caption" textAlign="right">
-            Data
-          </Typography>
-          <InformacaoComData
-            informacao="Português"
-            data={new Date('02-14-2023 19:00')}
-            dataComHoras
+          <Typography textAlign="left">Aulas do dia</Typography>
+          <InformacaoAulaComData
+            aula="Português"
+            onde="Online - Google Meet"
+            data={new Date('02-14-2023 19:30')}
           />
-          <InformacaoComData
-            informacao="Matemática"
-            data={new Date('02-18-2023 19:00')}
-            dataComHoras
+          <InformacaoAulaComData
+            aula="Matemática"
+            onde="Online - Zoom Meeting"
+            data={new Date('02-14-2023 21:00')}
           />
-        </Stack>
-        <Button variant="text" endIcon={<ArrowRight />}>
-          Ver todas as provas
-        </Button>
-        */}
         </Stack>
       </CardContent>
     </Card>
