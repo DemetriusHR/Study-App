@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import CardFrequenciaMedia from './Components/CardFrequenciaMedia';
 import CardConexoes from './Components/CardConexoes';
 import CardTarefasPendentes from './Components/CardTarefasPendentes';
+import CardProximasProvas from './Components/CardProximasProvas';
+import CardCalendarioAulas from './Components/CardCalendarioAulas';
 
 const Home = () => (
   <Grid container spacing={2} paddingTop={4}>
@@ -20,13 +22,13 @@ const Home = () => (
       </Stack>
     </Grid>
     <Grid item xs={6}>
-      <Paper>teste</Paper>
+      <CardCalendarioAulas />
     </Grid>
     <Grid item xs={6}>
       <CardTarefasPendentes />
     </Grid>
     <Grid item xs={6}>
-      <Paper>teste</Paper>
+      <CardProximasProvas />
     </Grid>
   </Grid>
 );

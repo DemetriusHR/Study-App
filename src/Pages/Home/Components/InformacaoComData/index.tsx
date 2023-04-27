@@ -16,13 +16,17 @@ const InformacaoComData = ({
   data,
   dataComHoras = false,
 }: InformacaoComDataProps) => {
-
   const dataFormatada = useMemo(() => {
-    let dataRetornada = data.toLocaleDateString();
+    let dataRetornada = data.toLocaleDateString('pt-BR');
+
     dataRetornada = dataRetornada.substring(0, dataRetornada.lastIndexOf('/'));
 
     if (dataComHoras) {
-      dataRetornada = `${dataRetornada} ${data.getHours()}:${data.getMinutes()}`;
+      const dataComIntl = new Intl.DateTimeFormat('pt-BR', {
+        timeStyle: 'short',
+      });
+
+      dataRetornada = `${dataRetornada} ${dataComIntl.format(data)}`;
     }
 
     return dataRetornada;
