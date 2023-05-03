@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import BoxMui from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,8 +15,11 @@ type InformacaoAulaComDataProps = {
   onde: string;
 };
 
-const CardHorario = styled(Card)`
+const Box = styled(BoxMui)`
   border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #D4D4D4;
   display: flex;
   align-items: center;
 `;
@@ -43,12 +47,8 @@ const InformacaoAulaComData = ({
             justifyContent="space-between"
             justifyItems="center"
           >
-            <CardHorario variant="outlined">
-              <CardContent>
-                <Typography>{horaFormatada}</Typography>
-              </CardContent>
-            </CardHorario>
-            <Stack spacing={1}>
+            <Box>{horaFormatada}</Box>
+            <Stack spacing={1} flex="1 0 auto">
               <Typography textAlign="left">{aula}</Typography>
               <Typography textAlign="left">{onde}</Typography>
             </Stack>

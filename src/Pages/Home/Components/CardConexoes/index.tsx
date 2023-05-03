@@ -1,12 +1,17 @@
 import React from 'react';
-import Card from '@mui/material/Card';
+import CardMui from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import WhatsApp from '@mui/icons-material/WhatsApp';
 import CalendarMonth from '@mui/icons-material/CalendarMonth';
+import { styled } from '@mui/material/styles';
 
 import ButtonConexao from './ButtonConexao';
+
+const Card = styled(CardMui)`
+  height: 100%;
+`;
 
 const CardConexoes = () => (
   <Card>

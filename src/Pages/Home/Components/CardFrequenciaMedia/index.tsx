@@ -1,9 +1,14 @@
 import React from 'react';
-import Card from '@mui/material/Card';
+import CardMui from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 
 import BoxMostraStatusInformacao from './BoxMostraStatusInformacao';
+
+const Card = styled(CardMui)`
+  height: 100%;
+`;
 
 const CardFrequenciaMedia = () => (
   <Card>
