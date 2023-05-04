@@ -14,6 +14,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          height: '100%',
+        },
+      },
+    },
   },
   typography: {
     fontWeightLight: 300,

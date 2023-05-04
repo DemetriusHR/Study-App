@@ -8,6 +8,17 @@ import ArrowRight from '@mui/icons-material/ArrowRightAlt';
 
 import InformacaoComData from '../InformacaoComData';
 
+const tarefasPendentes = [
+  {
+    informacao: 'Pesquisa de linguística',
+    data: new Date('02-07-2023'),
+  },
+  {
+    informacao: 'Cálculos',
+    data: new Date('02-04-2023'),
+  },
+];
+
 const CardTarefasPendentes = () => (
   <Card>
     <CardContent>
@@ -17,14 +28,9 @@ const CardTarefasPendentes = () => (
           <Typography variant="caption" textAlign="right">
             Data de entrega
           </Typography>
-          <InformacaoComData
-            informacao="Pesquisa de linguística"
-            data={new Date('02-07-2023')}
-          />
-          <InformacaoComData
-            informacao="Cálculos"
-            data={new Date('02-04-2023')}
-          />
+          {tarefasPendentes.map((tarefa) => (
+            <InformacaoComData key={tarefa.data.toJSON()} {...tarefa} />
+          ))}
         </Stack>
         <Button variant="text" endIcon={<ArrowRight />}>
           Ver todas as tarefas

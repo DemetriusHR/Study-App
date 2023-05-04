@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import CardMui from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -10,19 +11,20 @@ import NavegacaoMeses from './NavegacaoMeses';
 import InformacoesAulaDia from './InformacoesAulaDia';
 
 const Card = styled(CardMui)`
-  height: 100%;
   text-align: center;
 `;
 
 const CardCalendarioAulas = () => (
   <Card>
     <CardContent>
-      <Stack spacing={2}>
+      <Stack spacing={3}>
         <NavegacaoMeses />
+        <Box>
         <Typography textAlign="left" gutterBottom>
           Aulas do dia
         </Typography>
         <DiasCalendario />
+        </Box>
         <InformacoesAulaDia />
       </Stack>
     </CardContent>

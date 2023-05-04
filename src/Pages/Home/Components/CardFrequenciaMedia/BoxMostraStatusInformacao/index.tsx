@@ -1,7 +1,18 @@
 import React, { useMemo } from 'react';
-import Box from '@mui/material/Box';
+import BoxMui from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
+import { useTheme, styled } from '@mui/material/styles';
+
+const Box = styled(BoxMui)((props) => ({
+  paddingLeft: props.theme.spacing(5),
+  paddingRight: props.theme.spacing(5),
+  paddingTop: props.theme.spacing(6),
+  paddingBottom: props.theme.spacing(6),
+  marginBottom: props.theme.spacing(2),
+  borderRadius: '100%',
+  border: '2px solid',
+  borderColor: props.borderColor?.toString(),
+}));
 
 type BoxMostraStatusInformacaoProps = {
   informacao: string;
@@ -29,15 +40,8 @@ const BoxMostraStatusInformacao = ({
   }, [status, theme.palette]);
 
   return (
-    <Box textAlign="center">
-      <Box
-        p={5}
-        paddingY={6}
-        marginBottom={2}
-        borderRadius="100%"
-        border="2px solid"
-        borderColor={corStatus}
-      >
+    <BoxMui textAlign="center">
+      <Box borderColor={corStatus}>
         <Typography
           color={corStatus}
           fontSize={theme.typography.h6.fontSize}
@@ -47,7 +51,7 @@ const BoxMostraStatusInformacao = ({
         </Typography>
       </Box>
       <Typography>{titulo}</Typography>
-    </Box>
+    </BoxMui>
   );
 };
 

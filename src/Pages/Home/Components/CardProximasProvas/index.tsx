@@ -8,6 +8,17 @@ import ArrowRight from '@mui/icons-material/ArrowRightAlt';
 
 import InformacaoComData from '../InformacaoComData';
 
+const proximasProvas = [
+  {
+    prova: 'Português',
+    data: new Date('02-14-2023 19:00'),
+  },
+  {
+    prova: 'Matemática',
+    data: new Date('02-18-2023 19:00'),
+  },
+];
+
 const CardProximasProvas = () => (
   <Card>
     <CardContent>
@@ -17,16 +28,14 @@ const CardProximasProvas = () => (
           <Typography variant="caption" textAlign="right">
             Data
           </Typography>
-          <InformacaoComData
-            informacao="Português"
-            data={new Date('02-14-2023 19:00')}
-            dataComHoras
-          />
-          <InformacaoComData
-            informacao="Matemática"
-            data={new Date('02-18-2023 19:00')}
-            dataComHoras
-          />
+          {proximasProvas.map((prova) => (
+            <InformacaoComData
+              dataComHoras
+              key={prova.data.toJSON()}
+              informacao={prova.prova}
+              data={prova.data}
+            />
+          ))}
         </Stack>
         <Button variant="text" endIcon={<ArrowRight />}>
           Ver todas as provas

@@ -1,13 +1,22 @@
 import React from 'react';
-import BoxMui from '@mui/material/Box';
-import { useTheme, styled } from '@mui/material/styles';
-import { Typography } from '@mui/material';
+import CardMui from '@mui/material/Card';
+import CardContentMui from '@mui/material/CardContent';
+import CardActionArea from '@mui/material/CardActionArea';
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 
-const Box = styled(BoxMui)({
+const Card = styled(CardMui)({
   borderRadius: '10px',
-  height: '100%',
-  cursor: 'pointer',
 });
+
+const CardContent = styled(CardContentMui)((props) => ({
+  paddingRight: props.theme.spacing(3),
+  paddingLeft: props.theme.spacing(3),
+  paddingTop: props.autoFocus ? props.theme.spacing(4) : props.theme.spacing(3),
+  paddingBottom: props.autoFocus
+    ? props.theme.spacing(4)
+    : props.theme.spacing(3),
+}));
 
 const dia = ['DOM', 'SEG', 'TER', 'QUA', 'QUA', 'SEX', 'SÁB'];
 
@@ -21,20 +30,15 @@ const DiaCalendario = ({
   data,
   diaSelecionado = false,
   onClick,
-}: DiaCalendarioProps) => {
-  const theme = useTheme();
-
-  return (
-    <Box
-      boxShadow={theme.shadows[4]}
-      paddingX={theme.spacing(3)}
-      paddingY={diaSelecionado ? theme.spacing(4) : theme.spacing(3)}
-      onClick={onClick}
-    >
-      <Typography gutterBottom>{dia[data.getDay()]}</Typography>
-      <Typography>{data.getDate()}</Typography>
-    </Box>
-  );
-};
+}: DiaCalendarioProps) => (
+  <Card elevation={5}>
+    <CardActionArea onClick={onClick}>
+      <CardContent autoFocus={diaSelecionado}>
+        <Typography gutterBottom>{dia[data.getDay()]}</Typography>
+        <Typography>{data.getDate()}</Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+);
 
 export default DiaCalendario;
