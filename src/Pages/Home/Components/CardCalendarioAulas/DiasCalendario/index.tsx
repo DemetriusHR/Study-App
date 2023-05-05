@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import Stack from '@mui/material/Stack';
 
 import DiaCalendario from './DiaCalendario';
+import StackRow from '../../../../../Components/StackRow';
 
 const datas = [
   new Date('02-14-2023'),
@@ -19,15 +19,7 @@ const DiasCalendario = () => {
   }, []);
 
   return (
-    <Stack
-      spacing={2}
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      overflow="auto"
-      paddingY={2}
-      paddingX={1}
-    >
+    <StackRow spacing={2} overflow="auto" paddingY={2} paddingX={1}>
       {datas.map((data, index) => (
         <DiaCalendario
           key={data.toJSON()}
@@ -36,7 +28,7 @@ const DiasCalendario = () => {
           onClick={() => mudaDiaSelecionado(index)}
         />
       ))}
-    </Stack>
+    </StackRow>
   );
 };
 

@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ArrowRight from '@mui/icons-material/ArrowRight';
 import ArrowLeft from '@mui/icons-material/ArrowLeft';
+
+import StackRow from '../../../../../Components/StackRow';
 
 const dataAtual = new Date();
 const meses = [
@@ -49,12 +50,7 @@ const NavegacaoMeses = () => {
   }, []);
 
   return (
-    <Stack
-      spacing={2}
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <StackRow spacing={2}>
       <Button
         variant="outlined"
         startIcon={<ArrowLeft />}
@@ -72,7 +68,7 @@ const NavegacaoMeses = () => {
       >
         Próximo mês
       </Button>
-    </Stack>
+    </StackRow>
   );
 };
 

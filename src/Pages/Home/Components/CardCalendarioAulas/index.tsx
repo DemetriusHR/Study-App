@@ -17,7 +17,7 @@ const Card = styled(CardMui)`
 const CardCalendarioAulas = () => (
   <Card>
     <CardContent>
-      <Stack spacing={3}>
+      <Stack spacing={2}>
         <NavegacaoMeses />
         <Box>
         <Typography textAlign="left" gutterBottom>

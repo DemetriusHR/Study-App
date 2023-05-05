@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Stack from '@mui/material/Stack';
 
 import BoxMostraStatusInformacao from './BoxMostraStatusInformacao';
+import StackRow from '../../../../Components/StackRow';
 
 type IInformacoes = {
   frequencia: {
@@ -30,7 +30,7 @@ const informacoes: IInformacoes = {
 const CardFrequenciaMedia = () => (
   <Card>
     <CardContent>
-      <Stack direction="row" paddingX={4} justifyContent="space-between">
+      <StackRow paddingX={4}>
         <BoxMostraStatusInformacao
           informacao={`${informacoes.frequencia.porcentagem}%`}
           status={informacoes.frequencia.status}
@@ -41,7 +41,7 @@ const CardFrequenciaMedia = () => (
           status={informacoes.nota.status}
           titulo="Média de nota"
         />
-      </Stack>
+      </StackRow>
     </CardContent>
   </Card>
 );

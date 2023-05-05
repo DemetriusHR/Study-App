@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useTheme, styled } from '@mui/material/styles';
 
+import StackRow from '../../../../../../Components/StackRow';
+
 type InformacaoAulaComDataProps = {
   aula: string;
   data: Date;
@@ -18,6 +20,8 @@ const Box = styled(BoxMui)`
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border: 1px solid #d4d4d4;
   display: flex;
   align-items: center;
@@ -42,28 +46,17 @@ const InformacaoAulaComData = ({
     <Card elevation={5}>
       <CardActionArea>
         <CardContent>
-          <Stack
-            spacing={2}
-            direction="row"
-            justifyContent="space-between"
-            justifyItems="center"
-          >
+          <StackRow spacing={2}>
             <Box>{horaFormatada}</Box>
             <Stack spacing={1} flex="1 0 auto">
               <Typography textAlign="left">{aula}</Typography>
               <Typography textAlign="left">{onde}</Typography>
             </Stack>
-            <Stack
-              spacing={2}
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              color={theme.palette.primary.main}
-            >
+            <StackRow spacing={2} color={theme.palette.primary.main}>
               <Typography>Assistir a aula</Typography>
               <ArrowOutwardIcon />
-            </Stack>
-          </Stack>
+            </StackRow>
+          </StackRow>
         </CardContent>
       </CardActionArea>
     </Card>
