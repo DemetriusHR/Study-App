@@ -21,6 +21,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          height: '100%',
+        },
+      },
+    },
   },
   typography: {
     fontWeightLight: 300,

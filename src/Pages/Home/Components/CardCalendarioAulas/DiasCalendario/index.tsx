@@ -25,7 +25,8 @@ const DiasCalendario = () => {
       justifyContent="space-between"
       alignItems="center"
       overflow="auto"
-      padding="4px"
+      paddingY={2}
+      paddingX={1}
     >
       {datas.map((data, index) => (
         <DiaCalendario

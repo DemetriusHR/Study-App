@@ -1,13 +1,12 @@
 import React, { useMemo } from 'react';
 import BoxMui from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import { styled } from '@mui/material/styles';
+import { useTheme, styled } from '@mui/material/styles';
 
 type InformacaoAulaComDataProps = {
   aula: string;
@@ -19,7 +18,7 @@ const Box = styled(BoxMui)`
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px solid #D4D4D4;
+  border: 1px solid #d4d4d4;
   display: flex;
   align-items: center;
 `;
@@ -29,6 +28,8 @@ const InformacaoAulaComData = ({
   data,
   onde,
 }: InformacaoAulaComDataProps) => {
+  const theme = useTheme();
+
   const horaFormatada = useMemo(() => {
     const dataComIntl = new Intl.DateTimeFormat('pt-BR', {
       timeStyle: 'short',
@@ -52,9 +53,16 @@ const InformacaoAulaComData = ({
               <Typography textAlign="left">{aula}</Typography>
               <Typography textAlign="left">{onde}</Typography>
             </Stack>
-            <Button variant="text" endIcon={<ArrowOutwardIcon />}>
-              Assistir a aula
-            </Button>
+            <Stack
+              spacing={2}
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              color={theme.palette.primary.main}
+            >
+              <Typography>Assistir a aula</Typography>
+              <ArrowOutwardIcon />
+            </Stack>
           </Stack>
         </CardContent>
       </CardActionArea>

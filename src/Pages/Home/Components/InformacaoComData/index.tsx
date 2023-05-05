@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 type InformacaoComDataProps = {
   informacao: string;
@@ -36,9 +37,22 @@ const InformacaoComData = ({
     <Card elevation={5}>
       <CardActionArea>
         <CardContent>
-          <Stack spacing={2} direction="row" justifyContent="space-between">
+          <Stack
+            spacing={2}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <Typography>{informacao}</Typography>
-            <Typography>{dataFormatada}</Typography>
+            <Stack
+              spacing={1}
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Typography>{dataFormatada}</Typography>
+              <ArrowOutwardIcon color="primary" />
+            </Stack>
           </Stack>
         </CardContent>
       </CardActionArea>
