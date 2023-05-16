@@ -19,12 +19,13 @@ const Header = () => (
         ),
       }}
       variant="outlined"
+      title="campo de texto de pesquisa no aplicativo inteiro"
       fullWidth
     />
-    <IconButton color="primary">
+    <IconButton color="primary" title="notificações">
       <Notifications />
     </IconButton>
-    <IconButton color="primary">
+    <IconButton color="primary" title="conta">
       <AccountCircleIcon />
     </IconButton>
   </Stack>
