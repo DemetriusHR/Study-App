@@ -19,19 +19,19 @@ const Home = () => (
     <Grid item xs={12}>
       <Typography variant="h5">Seja bem vindo de volta, Demétrius</Typography>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <Stack spacing={2}>
         <CardFrequenciaMedia />
         <CardConexoes />
       </Stack>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <CardCalendarioAulas />
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <CardTarefasPendentes />
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <CardProximasProvas />
     </Grid>
   </Grid>
