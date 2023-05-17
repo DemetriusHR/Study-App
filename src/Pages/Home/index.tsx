@@ -15,7 +15,7 @@ const Stack = styled(StackMui)`
 `;
 
 const Home = () => (
-  <Grid container spacing={2} paddingTop={4}>
+  <Grid container spacing={2}>
     <Grid item xs={12}>
       <Typography variant="h5">Seja bem vindo de volta, Demétrius</Typography>
     </Grid>

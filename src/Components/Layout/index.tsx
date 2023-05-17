@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { Outlet } from 'react-router-dom';
@@ -16,13 +17,15 @@ const GridItemNavigation = styled(Grid)((props) => ({
 const Layout = () => (
   <Grid container spacing={2} p={2}>
     <GridItemNavigation item xs={0} md={3}>
-    <Paper elevation={2}>
-      <Navigation />
+      <Paper elevation={2}>
+        <Navigation />
       </Paper>
     </GridItemNavigation>
     <Grid item xs={12} md={9}>
       <Header />
-      <Outlet />
+      <Box paddingTop={4}>
+        <Outlet />
+      </Box>
     </Grid>
   </Grid>
 );
